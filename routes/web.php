@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/movies',
+	[
+		'as' => 'all-movies',
+		'uses' => 'MoviesController@index'
+	]
+);
+
+Route::get('/movie',
+	[
+		'as' => 'single-movie',
+		'uses' => 'MoviesController@show'
+	]
+);
