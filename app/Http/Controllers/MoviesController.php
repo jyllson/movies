@@ -16,4 +16,14 @@ class MoviesController extends Controller
     	$movie = Movie::find($id);
     	return view('single-movie', compact('movie'));
     }
+
+    public function store(Request $request){
+    	$request->validate(Movie::STORE_RULES);
+    	$movie = Movie::create($request->all());
+    	return redirect()->route('all-movies');
+    }
+
+    public function create(){
+    	return view('create');
+    }
 }

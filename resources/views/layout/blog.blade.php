@@ -10,6 +10,7 @@
 
       @yield('movie')
       
+      @yield('create')
 
       <hr>
 

@@ -13,7 +13,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/add">Add movie</a>
+              <a class="nav-link" href="/movie/add">Add movie</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Services</a>
