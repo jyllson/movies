@@ -22,7 +22,7 @@ Route::get('/movies',
 	]
 );
 
-Route::get('/movie',
+Route::get('/movie/{id}',
 	[
 		'as' => 'single-movie',
 		'uses' => 'MoviesController@show'
