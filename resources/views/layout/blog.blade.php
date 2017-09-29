@@ -7,6 +7,8 @@
 
       <!-- Page Heading -->
       <h1 class="my-4">Movies</h1>
+      
+      @yield('genre')
 
       @yield('movie')
       

@@ -36,6 +36,13 @@ Route::get('/movie/{id}',
 	]
 );
 
+Route::get('/movies/genre/{genre}',
+	[
+		'as' => 'movies-genre',
+		'uses' => 'GenresController@index'
+	]
+);
+
 Route::post('/movies', 
 	[
 		'as' => 'store-movie',

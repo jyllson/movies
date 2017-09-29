@@ -22,7 +22,8 @@
           <hr>
 
           <!-- Date/Time -->
-          <p>@yield('genre') filmed in @yield('year')</p>
+          <p><a href="/movies/genre/@yield('genre')">@yield('genre')</a> 
+          filmed in @yield('year')</p>
 
           <hr>
 

@@ -21,3 +21,9 @@
 @section('title')
 	Movies
 @endsection
+
+@section('genre')
+	@isset($genre)
+		<p>Genre: <strong>{{ $genre }}</strong></p>
+	@endisset
+@endsection
