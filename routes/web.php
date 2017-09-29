@@ -42,3 +42,10 @@ Route::post('/movies',
 		'uses' => 'MoviesController@store'
 	]
 );
+
+Route::post('/movies/{movieId}/comment',
+	[
+		'as' => 'comments-movie',
+		'uses' => 'CommentsController@store'
+	]
+);

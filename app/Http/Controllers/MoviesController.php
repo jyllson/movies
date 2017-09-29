@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use Carbon\Carbon;
 
 class MoviesController extends Controller
 {
@@ -18,7 +19,12 @@ class MoviesController extends Controller
     }
 
     public function store(Request $request){
-    	$request->validate(Movie::STORE_RULES);
+        $now = new Carbon();
+        $year = $now->year;
+        $rules = Movie::STORE_RULES;
+        $rules['year'] = str_replace('year', $year, $rules['year']);
+
+    	$request->validate($rules);
     	$movie = Movie::create($request->all());
     	return redirect()->route('all-movies');
     }

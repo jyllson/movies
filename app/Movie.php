@@ -3,19 +3,24 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Movie extends Model
 {
     protected $guarded = ['id'];
     protected $fillable = ['title', 'genre', 'director', 'year', 'storyline'];
 
+
     const STORE_RULES = [
-    	'title' => 'required | string | min: 5',
-    	'genre' => 'required | min: 5',
-    	'director' => 'required | min: 5',
-    	'year' => 'required | min: 4',
-    	'storyline' => 'required | min: 15'
+    	'title' => 'required',
+    	'genre' => 'required',
+    	'year' => 'required | integer | between: 1900,year',
+    	'storyline' => 'required | max: 1000'
     ];
+
+    public function comments(){
+    	return $this->hasMany(Comment::class);
+    }
 
     
 }
